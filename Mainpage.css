@@ -1,0 +1,346 @@
+*{
+	font-family: lucida console !important , Brush Script MT;
+	-webkit-user-select: none;      
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+	-o-user-select: none;
+	user-select: none;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+    height: 200px; 
+    font-family: lucida console !important , Brush Script MT;
+    background-color: #f1f1f1;
+    
+	
+}
+
+.logo{
+	float: left;
+	padding-top: 80px;
+
+}
+
+.nav{
+	padding-top: 20px;
+	font-family: lucida console,  Brush Script MT;
+	word-spacing: 28px;
+	font-size: 14px;
+	color: white;	
+}
+
+#navColor{
+	text-decoration: none;
+	background-color:  #262626;
+	padding: 8px 16px;
+	margin-right: 6px;
+	border-radius: 5px
+}
+
+
+
+.container0{
+	width: 100%;
+	height: 600px;
+	background-color: ebebeb;
+	background-image: url('ceiling-593369_1920.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#headerFont0{
+	font-size: 38px;
+	font-weight: 90;
+	padding-top: 130px;
+	padding-left: 680px;
+	font-family: lucida console, Brush Script MT;
+	-webkit-font-smoothing: antialiased;
+}
+
+#containerText0{
+	color: white;
+	font-family: lucida console, Brush Script MT;
+	font-size: 17px;
+	line-height: 22px;
+	padding-top: 10px;
+	
+}
+
+.brandShow{
+	width: 100%;
+	height: 280px;
+	background-color: #f1f1f1;
+	font-family: lucida console, Brush Script MT;
+
+
+}
+
+.SolutionsFocusedOn{
+	padding-top: 50px;
+	padding-left: 460px;
+	font-size: 23px;
+
+}
+
+#space{
+	padding-left: 560px;
+	padding-top: 3px;
+}
+
+.brand1{
+	padding-left: 160px;
+	float: left;
+	font-size: 13px;
+}
+
+.brand1img{
+	
+	padding-top: 43px;
+	padding-left:30px;
+	padding-bottom: 5px;
+}
+
+
+.brand2{
+	float: left;
+	padding-left: 100px;
+	font-size: 13px;
+}
+
+.brand2img{
+	float: left;
+	padding-top: 38px;
+	padding-left:80px;
+	padding-bottom: 5px;
+}
+
+.brand2Text{
+	padding-left: 60px;
+}
+
+.brand3{
+	float: left;
+	padding-left: 140px;
+	padding-top: 43px;
+	font-size: 13px;
+}
+
+
+.brand3img{
+	padding-left: 12px;
+	padding-bottom: 5px;
+}
+
+.brand4{
+	float: left;
+	padding-top: 44px;
+	padding-left: 175px;
+	font-size: 13px;
+}
+
+.brand4img{
+	padding-left: 20px;
+	padding-bottom: 5px;
+}
+
+.container1{
+	width: 100%;
+	background-color: white;
+	height: 500px;
+}
+
+
+.container1img{
+	background-color: #f1f1f1;
+	float: left;
+	padding-top: 90px;
+	padding-left: 50px; 
+	height: 100%;
+	width: 50%;
+	
+}
+
+
+#headerFont1{
+	color: #ff4d4d;
+	padding-top: 130px;
+	padding-left: 800px;
+	padding-right: 30px;
+	font-size: 30px;
+	font-family: Tahoma , lucida console , Brush Script MT;
+}
+
+#space1{
+	padding-left: 880px;
+	padding-top: 10px;
+}
+
+.containerText1{
+	color: black;
+	padding-top: 10px;
+	padding-right: 13px;
+	font-family: lucida console, Brush Script MT;
+	font-size: 15px;
+	line-height: 25px;
+	float: right;
+
+}
+
+
+#headerFont2{
+	color: #4d4dff;
+	padding-top: 70px;
+	padding-left: 200px;
+	font-size: 33px;
+	font-family: Tahoma , lucida console , Brush Script MT;
+
+}
+
+
+#space2{
+	padding-left: 223px;
+	padding-top: 10px;
+}
+
+.container2{
+	width: 100%;
+	height: 500px;
+	background-color: white;
+}
+
+.container2img{
+	background-color: #f1f1f1;
+	padding-top: 75px;
+	padding-left: 85px;
+	float: right;
+	height: 100%;
+	width: 50%;
+	
+}
+
+
+
+#containerText2{
+	color: black;
+	padding-top: 40px;
+	padding-left: 20px;
+	font-family: lucida console, Brush Script MT;
+	font-size: 15px;
+	line-height: 25px;
+	float: left;
+}
+
+
+
+#headerFont3{
+	color: #27ae60;
+	padding-top: 130px;
+	padding-left: 140px;
+	padding-right: 80px;
+	font-size: 30px;
+	font-family: Tahoma , lucida console , Brush Script MT;
+		
+		
+}
+
+
+#space3{
+	padding-left: 180px;
+	padding-top: 3px;
+}
+
+.container3{
+	width: 100%;
+	height: 550px;
+	background-color: white;
+	}
+
+.container3img{
+	background-color: #f1f1f1;
+	float: left;
+	padding-top: 110px;
+	padding-left: 60px; 
+	height: 100%;
+	width: 50%;
+	
+}
+
+
+#containerText3{
+	color: black;
+	padding-top: 10px;
+	padding-right: 30px;
+	font-family: lucida console, Brush Script MT;
+	font-size: 15px;
+	line-height: 25px;
+	float: right;
+}
+
+
+#headerFont4{
+	color: #3333cc;
+	padding-top: 90px;
+	padding-left: 120px;
+	font-size: 33px;
+	font-family: Tahoma , lucida console , Brush Script MT;
+	
+		
+}
+
+.container4{
+	width: 100%;
+	height: 500px;
+	background-color: white;
+	
+}
+
+#space4{
+	padding-left: 165px;
+	padding-top: 10px;
+}
+
+.container4img{
+	background-color: #f1f1f1;
+	padding-top: 75px;
+	padding-left: 85px;
+	float: right;
+	height: 100%;
+	width: 50%;
+	
+}
+
+
+#containerText4{
+	color: black;
+	padding-top: 40px;
+	padding-left: 60px;
+	font-family: lucida console, Brush Script MT;
+	font-size: 15px;
+	line-height: 25px;
+	float: left;
+}
+
+hr{
+	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 3px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+
+.footer{
+	height: 250px;
+	padding-top: 240px;
+	background-color: #f1f1f1;
+	color: black;
+	font-family: lucida console, Brush Script MT;
+	text-align: center;
+	font-size: 13px;
+
+}
