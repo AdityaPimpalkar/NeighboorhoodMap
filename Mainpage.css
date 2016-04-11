@@ -70,95 +70,115 @@ body{
 	
 }
 
-.brandShow{
+.brand{
+
 	width: 100%;
 	height: 280px;
 	background-color: #f1f1f1;
 	font-family: lucida console, Brush Script MT;
+}
 
 
+.solutions{
+	max-width: 50em;
+	margin: 0 auto;
+	
 }
 
 .SolutionsFocusedOn{
-	padding-top: 50px;
-	padding-left: 460px;
+	padding: 40 0 25 0;
+	text-align: center;
 	font-size: 23px;
+
 
 }
 
 #space{
-	padding-left: 560px;
-	padding-top: 3px;
+	border-bottom: 2px solid #222;
+	max-width: 50px;
+	margin: 0 auto;
 }
 
+
 .brand1{
-	padding-left: 160px;
 	float: left;
 	font-size: 13px;
+	padding: 40px;
+	max-width: 20em;
 }
 
 .brand1img{
-	
-	padding-top: 43px;
-	padding-left:30px;
-	padding-bottom: 5px;
+	padding: 0 2.5em;
 }
-
 
 .brand2{
 	float: left;
-	padding-left: 100px;
+	padding:40px;
 	font-size: 13px;
 }
 
-.brand2img{
-	float: left;
-	padding-top: 38px;
-	padding-left:80px;
-	padding-bottom: 5px;
+.brand2Text{
+	margin: 0 auto;
 }
 
-.brand2Text{
-	padding-left: 60px;
+.brand2img{
+	padding: 0 14 0 20;
 }
 
 .brand3{
 	float: left;
-	padding-left: 140px;
-	padding-top: 43px;
 	font-size: 13px;
+	padding: 46 40 40 40;
 }
 
 
 .brand3img{
-	padding-left: 12px;
-	padding-bottom: 5px;
+	padding: 0 8 0 10;
 }
 
 .brand4{
 	float: left;
-	padding-top: 44px;
-	padding-left: 175px;
+	padding: 40 40 40 40;
 	font-size: 13px;
 }
 
 .brand4img{
-	padding-left: 20px;
-	padding-bottom: 5px;
+	padding: 0 0 2 16;
 }
 
-.container1{
-	width: 100%;
-	background-color: white;
-	height: 500px;
+.BusinessContainer{
+	width: auto;
+	background-color:#ffffff;
+	height: 300px; 
+
 }
+
+.img{
+	float: left;
+	border-right: 2px solid #fff;
+}
+
+#BusinessContent{
+	max-width: 40em;
+	margin: 0 auto;
+
+}
+
+#BusinessImg{
+	max-width: 50%;
+	padding: 20px;
+}
+
+#BusinessText{
+	position: relative;
+	float: right;
+}
+
 
 
 .container1img{
 	background-color: #f1f1f1;
 	float: left;
-	padding-top: 90px;
-	padding-left: 50px; 
 	height: 100%;
 	width: 50%;
 	
@@ -167,26 +187,26 @@ body{
 
 #headerFont1{
 	color: #ff4d4d;
-	padding-top: 130px;
-	padding-left: 800px;
-	padding-right: 30px;
 	font-size: 30px;
 	font-family: Tahoma , lucida console , Brush Script MT;
+	max-width: 200px;
+
 }
 
 #space1{
-	padding-left: 880px;
-	padding-top: 10px;
+	border-bottom: 2px solid #222;
+	max-width: 100px;
+	margin: auto 10;
 }
+
 
 .containerText1{
 	color: black;
-	padding-top: 10px;
-	padding-right: 13px;
+
 	font-family: lucida console, Brush Script MT;
 	font-size: 15px;
 	line-height: 25px;
-	float: right;
+	
 
 }
 
