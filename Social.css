@@ -1,0 +1,154 @@
+*{
+	font-family: lucida console !important , Brush Script MT;
+	-webkit-user-select: none;      
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+	-o-user-select: none;
+	user-select: none;
+
+}
+
+
+body{
+		margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        width: 100%;
+        height: 200px;
+
+}
+
+
+.AboutHeader{
+	height: 100px;
+	background-image: url('whiteboard-849808_1920.jpg');
+	background-size: cover;
+}
+
+.logo{
+	float: left;
+	padding: 10 10 0 75;
+	border-radius: 50px;
+}
+
+#LogoText{
+	color: #000;
+	float: left;
+	font-family: sans-serif;
+	font-size: 15px;
+	padding: 25 0 23 10 ;
+	border-left: 2px solid #000; 
+}
+
+.TopNav{
+	font-family: lucida console,  Brush Script MT;
+	word-spacing: 28px;
+	font-size: 14px;
+	color: white;	
+}
+
+
+#navColor{
+	text-decoration: none;
+	color: black;
+	padding: 8px 16px;
+	margin-right: 6px;
+	border-radius: 5px
+}
+
+#navColor:hover{
+	background-color:#1ac6ff;
+	transition: background 200ms ease-in-out;
+
+}
+
+#home{
+	background-color: #1ac6ff;
+	text-decoration: none;
+	color: black;
+	padding: 8px 16px;
+	margin-right: 6px;
+	border-radius: 5px
+}
+
+#NavButton{
+	float: right;
+	padding: 25 40 30 40;
+	font-size: 15px;
+}
+
+
+.AdpyDesc{
+	width: 100%;
+	height: 600px;
+	background-color: ebebeb;
+	background-image: url('whiteboard-849808_1920.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.header{
+	font-size: 38px;
+	font-family: lucida console , Brush Script MT;
+}
+
+.nav
+{	
+	font-family: lucida console , Brush Script MT;
+	border-bottom-left-radius: 10px;
+	word-spacing: 28px;
+	font-size: 16px;
+}
+
+#socialcap
+{
+	font-size: 17px;
+}
+
+
+h1
+{   
+	font-size:  50px;
+	text-align: center;
+}
+
+
+.container1{
+	padding-top: 0px;
+}
+
+
+.image{
+	padding-top: 0px;
+	background-size: cover;
+
+}
+
+.middleContainer{
+
+	font-size: 19px;
+	line-height: 25px;
+	word-spacing: 5px;
+}
+
+
+.social{
+	font-family: lucida console , Brush Script MT;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	list-style: none;
+	
+}
+
+
+
+.footer{
+	font-family: lucida console , Brush Script MT;
+	list-style: none;
+	padding-left:60px;
+	font-size: 15px;
+	text-align: left;
+	
+}
