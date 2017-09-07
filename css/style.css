@@ -1,0 +1,74 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  height: 100%;
+}
+#hamburger {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  background-color: #f44e42;
+  padding: 2px 5px;
+  z-index: 101;
+  position: fixed;
+  font-size: 22px;
+  left: 10px;
+}
+
+ul {
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-padding-start: 0px;
+}
+.search {
+  max-width: 250px;
+  width: 90%;
+  height: 35px;
+  display: flex;
+  z-index: 1;
+  position: fixed;
+  left: 55px;
+  top: 10px;
+}
+.search-box {
+  border: #f44e42 3px solid;
+  width: 250px;
+}
+#sidebar.open {
+  transform: translate(0,0);
+ transition: transform 0.7s ease;
+  z-index: 2;
+}
+
+#sidebar.close {
+  transform: translate(-310px,0);
+  transition: transform 0.7s ease;
+}
+
+.search-results {
+  margin: 0 auto;
+  max-width: 240px;
+  width: 100%;
+}
+.results {
+  margin: 0 auto;
+  background-color: white;
+  max-width: 250px;
+  width: 90%;
+  height: 385px;
+  display: flex;
+  z-index: 1;
+  position: fixed;
+  left: 55px;
+  top: 50px;
+}
+.places-list {
+  padding: 10px 20px;
+  font-family: arial;
+  font-size: 20px;
+  cursor: pointer;
+  list-style:none;
+}
