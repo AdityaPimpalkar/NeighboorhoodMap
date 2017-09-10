@@ -75,20 +75,20 @@ function initialize() {
   
   for (var i = 0; i < locations.length; i++) {
     var data = locations[i];
-	  var loc = new google.maps.LatLng(data.lat,data.lng);
+		var loc = new google.maps.LatLng(locations[i].lat,locations[i].lng);
      marker = new google.maps.Marker({
       position : loc,
       map: map
   });
-    
-      google.maps.event.addListener(marker, 'click', infoWindowContent(marker,data,largeInfowindow));
-    
-    marker.setMap(map); 
+
+     google.maps.event.addListener(marker, 'click', infoWindowContent(marker,data,largeInfowindow));
+
     locations[i].marker = marker;
       locations[i].largeInfowindow = largeInfowindow;
-  }
-	
- function infoWindowContent(marker,data,largeInfowindow) {
+      marker.setMap(map);
+  }  
+   
+  function infoWindowContent(marker,data,largeInfowindow) {
    return function() {
     largeInfowindow.setContent('<div id="WindowContent">'+'<center>'+'<b>'+data.title+'</b>'+
                                            '<br>'+data.contact+'</br>'+data.address+'<br>'+'<a href="http://'+data.url+'">'+
@@ -101,8 +101,9 @@ function initialize() {
   var client_ID = 'QRBMUVGW0P52B0QSOR4YB4Y2J4YK2PYEZI4RT0AVOU4BIJP5';
 	var client_Secret = 'BQVPDWBUOIGEG3WLOYF5MWP323PVQPZJJMDWTKPGQ2Y0UMJG';
 
-	for (var i = 0; i < locations.length; i++) {
-		var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll='+ locations[i].lat + ',' + locations[i].lng + '&client_id=' +client_ID + '&client_secret=' + client_Secret + '&v=20160118' + '&query=' + locations[i].title;
+  var foursquareURL;
+	for (i = 0; i < locations.length; i++) {
+		foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll='+ locations[i].lat + ',' + locations[i].lng + '&client_id=' +client_ID + '&client_secret=' + client_Secret + '&v=20160118' + '&query=' + locations[i].title;
 	}
    $.getJSON(foursquareURL).done(function(data) {
 		var results = data.response.venues[0];
@@ -156,16 +157,16 @@ function hideMarker(locat) {
 
 self.markerPop = function (obj) { 
   var title = obj.title; 
-  for (var i in self.filteredList()) { 
+  for (var i=0;i<locations.length;i++) { 
     if (locations[i].title === obj.title) {
     var data = locations[i];
     var loc = new google.maps.LatLng(data.lat,data.lng);
      google.maps.event.trigger(locations[i].marker, 'click'); 
      map.panTo(loc);   
    } 
- }
+  }
+};
 
-}
 function closeInfoWindows() {
   for(var i=0; i<locations.length; i++) {
     locations[i].largeInfowindow.close();
