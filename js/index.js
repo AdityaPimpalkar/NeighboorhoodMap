@@ -75,25 +75,26 @@ function initialize() {
   
   for (var i = 0; i < locations.length; i++) {
     var data = locations[i];
-		var loc = new google.maps.LatLng(data.lat,data.lng);
+	  var loc = new google.maps.LatLng(data.lat,data.lng);
      marker = new google.maps.Marker({
       position : loc,
       map: map
   });
-       
-      google.maps.event.addListener(marker, 'click', (function(marker,data,largeInfowindow) {
-            return function() {
-                largeInfowindow.setContent('<div id="WindowContent">'+'<center>'+'<b>'+data.title+'</b>'+
-                                           '<br>'+data.contact+'</br>'+data.address+'<br>'+'<a href="http://'+data.url+'">'+
-                                           data.url+'</a>'+'</br>'+'</center>'+'</div>');
-                largeInfowindow.open(map, marker);
-            }
-        })(marker,data,largeInfowindow));
+    
+      google.maps.event.addListener(marker, 'click', function(){setInfoWindow(marker,data,largeInfowindow)}); 
     
     marker.setMap(map); 
     locations[i].marker = marker;
       locations[i].largeInfowindow = largeInfowindow;
   }
+  
+	 function setInfoWindow(marker,data,largeInfowindow) {
+    largeInfowindow.setContent('<div id="WindowContent">'+'<center>'+'<b>'+data.title+'</b>'+
+                                     '<br>'+data.contact+'</br>'+data.address+'<br>'+'<a href="http://'+data.url+'">'+
+                                     data.url+'</a>'+'</br>'+'</center>'+'</div>');
+          largeInfowindow.open(map, marker);
+  }(marker,data,largeInfowindow);
+	
 
   var client_ID = 'QRBMUVGW0P52B0QSOR4YB4Y2J4YK2PYEZI4RT0AVOU4BIJP5';
 	var client_Secret = 'BQVPDWBUOIGEG3WLOYF5MWP323PVQPZJJMDWTKPGQ2Y0UMJG';
