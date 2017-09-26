@@ -1,43 +1,39 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neighbourhood Map  </title>
-      <link rel="stylesheet" href="css/style.css">
-      <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
-      <script type="text/javascript" src="js/knockout-3.4.0.js"></script>
-      <script type="text/javascript" src="js/nav-toggle.js"></script>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighbourhood Map </title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="js/knockout-3.4.0.js"></script>
+    <script type="text/javascript" src="js/nav-toggle.js"></script>
+    <script type="text/javascript" src="js/locations.js"></script>
     <script src="js/index.js"></script>
-  
 </head>
 
 <body>
-  <div class="search">
-    <div id="hamburger" onclick="navopen()">
-      <img src="images/ham.svg" title="ham-icon">
-  </div>
-    <input type="text" class="search-box close"  id="sidebar" data-bind=" textInput: searchPlace, valueUpdate: 'afterkeydown'"
-    placeholder="Search">
-  </div>
-
-  <div class="results close"  id="sidebar">
-    <div class="search-results" data-bind="foreach: filteredList">
-        <ul class="places-list" data-bind="click: $root.markerPop">
-          <li class="places" data-bind="text: title"></li>
-        </ul>
+    <div class="search">
+        <div id="hamburger" onclick="navopen()">
+            <img src="images/ham.svg" title="ham-icon">
+        </div>
+        <input type="text" class="search-box close" id="sidebar" data-bind=" textInput: searchPlace, valueUpdate: 'afterkeydown'" placeholder="Search">
     </div>
-  </div>
 
-  <div id="map"></div>
-  <!--TODO: Insert your API Key in the below call to load the API.-->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAVLn7uFxI6_-KvtR5ZOhW0oOPX7BMwDgQ&callback=initialize" onerror="googleError()">
+    <div class="results close" id="sidebar">
+        <div class="search-results" data-bind="foreach: filteredList">
+            <ul class="places-list" data-bind="click: $root.markerPop">
+                <li class="places" data-bind="text: title"></li>
+            </ul>
+        </div>
+    </div>
 
-  </script>
+    <div id="map"></div>
+    <!--TODO: Insert your API Key in the below call to load the API.-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAVLn7uFxI6_-KvtR5ZOhW0oOPX7BMwDgQ&callback=initialize" onerror="googleError()">
+    </script>
 
 </body>
 
-</html>
-
-</body>
 </html>
