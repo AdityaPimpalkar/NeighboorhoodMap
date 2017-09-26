@@ -2,63 +2,53 @@
  var map;
  var marker;
  var largeInfowindow;
+ var markers = [];
 
   var locations = [
+      {
+        "title": "St. Pauls Cathedral",
+        "lat" : "51.513845",
+        "lng" : "-0.098351",
+        "id" : "4ac518cef964a520f5a520e3"      
+      },
+      {
+        "title": "British Library",
+        "lat" : "51.529972",
+        "lng" : "-0.127676",
+        "id" : "4ac518cef964a52019a620e3"        
+      },
       {
         "title": "Imperial War Museum",
         "lat" : "51.495831",
         "lng" : "-0.108662",
-        "contact" : "+44 20 7416 5000",
-        "address" : "Lambeth Rd, London SE1 6HZ, UK",
-        "url" : "iwm.org.uk"
+        "id" : "4ac518d3f964a52078a720e3"
+                
+      },
+      {
+        "title": "Madame Tussauds",
+        "lat" : "51.522890",
+        "lng" : "-0.154967",
+        "id" : "4ac518cef964a520fca520e3"
+      },
+      {
+
+        "title": "British Museum",
+        "lat" : "51.519413",
+        "lng" : "-0.126957",
+        "id" : "4ac518d2f964a5203da720e3" 
+             
+      },
+      {   
+        "title": "Sadler's Wells",
+        "lat" : "51.529272",
+        "lng" : "-0.106325",
+        "id" : "4ac518e8f964a52077ab20e3"        
       },
       {
         "title": "Buckingham Palace",
         "lat" : "51.501364",
         "lng" : "-0.141890",
-        "contact" : "+44 303 123 7300",
-        "address" : "Westminster, London SW1A 1AA, UK",
-        "url" : "royalcollection.org.uk"
-      },
-      {
-        "title": "St. Pauls Cathedral",
-        "lat" : "51.513845",
-        "lng" : "-0.098351",
-        "contact" : "+44 330 333 1144",
-        "address" : "St. Paul's Churchyard, London EC4M 8AD, UK",
-        "url" : "stpauls.co.uk"
-      },
-      {
-        "title": "The British Library",
-        "lat" : "51.529972",
-        "lng" : "-0.127676",
-        "contact" : "+44 330 333 1144",
-        "address" : "96 Euston Rd, Kings Cross, London NW1 2DB, UK",
-        "url" : "bl.uk"
-      },
-      {
-        "title": "Madame Tussauds London",
-        "lat" : "51.522890",
-        "lng" : "-0.154967",
-        "contact" : "+44 20 7863 8000",
-        "address" : "Marylebone Rd, Marylebone, London NW1 5LR, UK",
-        "url" : "madametussauds.com"
-      },
-      {
-        "title": "Sadler's Wells Theatre",
-        "lat" : "51.529272",
-        "lng" : "-0.106325",
-        "contact" : "+44 20 7863 8000",
-        "address" : "Marylebone Rd, Marylebone, London NW1 5LR, UK",
-        "url" : "sadlerswells.com"
-      },
-      {
-        "title": "The British Museum",
-        "lat" : "51.519413",
-        "lng" : "-0.126957",
-        "contact" :  "+44 20 7323 8299",
-        "address" : "Great Russell St, Bloomsbury, London WC1B 3DG, UK",
-        "url" : "britishmuseum.org"
+        "id" : "4abe4502f964a520558c20e3"
       }
 
  ];
@@ -72,55 +62,63 @@ function initialize() {
   });
   
    var largeInfowindow = new google.maps.InfoWindow();
-  
+   var apiURL = 'https://api.foursquare.com/v2/venues/';
+  var data;
+  var fsName;
+  var fsContact;
+  var fsAddress;
+  var fsUrl;
+  var client_ID = 'QRBMUVGW0P52B0QSOR4YB4Y2J4YK2PYEZI4RT0AVOU4BIJP5';
+  var client_Secret = 'BQVPDWBUOIGEG3WLOYF5MWP323PVQPZJJMDWTKPGQ2Y0UMJG';
+
   for (var i = 0; i < locations.length; i++) {
-    var data = locations[i];
+    data = locations[i];
 		var loc = new google.maps.LatLng(locations[i].lat,locations[i].lng);
      marker = new google.maps.Marker({
       position : loc,
-      map: map
+      map: map,
+      id: locations[i].id,
+      name: locations[i].title
   });
-
+     markers.push(marker);
      google.maps.event.addListener(marker, 'click', infoWindowContent(marker,data,largeInfowindow));
 
     locations[i].marker = marker;
       locations[i].largeInfowindow = largeInfowindow;
       marker.setMap(map);
   }  
-   
+
   function infoWindowContent(marker,data,largeInfowindow) {
-   return function() {
-    largeInfowindow.setContent('<div id="WindowContent">'+'<center>'+'<b>'+data.title+'</b>'+
-                                           '<br>'+data.contact+'</br>'+data.address+'<br>'+'<a href="http://'+data.url+'">'+
-                                           data.url+'</a>'+'</br>'+'</center>'+'</div>');
-     largeInfowindow.open(map, marker);
-     setInfowWindow = infoWindowContent;
+    for (var i = 0; i < locations.length; i++) {
+      var venueFoursquareID = locations[i].id;
+    foursquareURL = apiURL + venueFoursquareID + '?client_id=' +client_ID + '&client_secret=' + client_Secret + '&v=20160118';
     }
-  }(marker,data,largeInfowindow);
 
-  var client_ID = 'QRBMUVGW0P52B0QSOR4YB4Y2J4YK2PYEZI4RT0AVOU4BIJP5';
-	var client_Secret = 'BQVPDWBUOIGEG3WLOYF5MWP323PVQPZJJMDWTKPGQ2Y0UMJG';
+    $.getJSON(foursquareURL).done(function(data) {
+      fsName = data.response.venue.name;
+    fsContact = data.response.venue.contact.formattedPhone;
+    fsAddress = data.response.venue.location.formattedAddress;
+    fsUrl = data.response.venue.url;
 
-  var foursquareURL;
-	for (i = 0; i < locations.length; i++) {
-		foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll='+ locations[i].lat + ',' + locations[i].lng + '&client_id=' +client_ID + '&client_secret=' + client_Secret + '&v=20160118' + '&query=' + locations[i].title;
-	}
-   $.getJSON(foursquareURL).done(function(data) {
-		var results = data.response.venues[0];
-		var fs_url = results.url;
-		if (typeof fs_url === 'undefined'){
-			fs_url = "";
-		}
-	}).fail(function() {
-		alert("There was an error with the Foursquare API call. Please refresh the page and try again to load Foursquare data.");
+  }).fail(function() {
+    alert("There was an error with the Foursquare API call. Please refresh the page and try again to load Foursquare data.");
 });
 
+  return function() {
+    largeInfowindow.setContent('<div id="WindowContent">'+'<center>'+'<b>'+fsName+'</b>'+
+                                           '<br>'+fsContact+'</br>'+fsAddress+'<br>'+'<a href="http://'+fsUrl+'">'+
+                                           fsUrl+'</a>'+'</br>'+'</center>'+'</div>');
+     largeInfowindow.open(map, marker);
+     setInfowWindow = infoWindowContent;
+  };
+}
+  
 	ko.applyBindings(new ViewModel());
 }
 																 
 function ViewModel() {
-	var self = this;
-	this.searchPlace = ko.observable("");
+  var self = this;
+  this.searchPlace = ko.observable("");
 	
 	self.filteredList = ko.computed(function () {
     var search = self.searchPlace().toLowerCase();
