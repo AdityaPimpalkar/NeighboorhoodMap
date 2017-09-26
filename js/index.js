@@ -89,27 +89,25 @@ function initialize() {
   }  
 
   function infoWindowContent(marker,data,largeInfowindow) {
-	  
-      var venueFoursquareID = marker.id;
-    foursquareURL = apiURL + venueFoursquareID + '?client_id=' +client_ID + '&client_secret=' + client_Secret + '&v=20160118';
+    var venueFoursquareID = marker.id;
+    return function() {
+      foursquareURL = apiURL + venueFoursquareID + '?client_id=' +client_ID + '&client_secret=' + client_Secret + '&v=20160118';
 
-    $.getJSON(foursquareURL).done(function(data) {
-      fsName = data.response.venue.name;
-    fsContact = data.response.venue.contact.formattedPhone;
-    fsAddress = data.response.venue.location.formattedAddress;
-    fsUrl = data.response.venue.url;
-
-  }).fail(function() {
-    alert("There was an error with the Foursquare API call. Please refresh the page and try again to load Foursquare data.");
-});
-
-  return function() {
-    largeInfowindow.setContent('<div id="WindowContent">'+'<center>'+'<b>'+fsName+'</b>'+
+      $.getJSON(foursquareURL).done(function(data) {
+        fsName = data.response.venue.name;
+        fsContact = data.response.venue.contact.formattedPhone;
+        fsAddress = data.response.venue.location.formattedAddress;
+        fsUrl = data.response.venue.url;
+        largeInfowindow.setContent('<div id="WindowContent">'+'<center>'+'<b>'+fsName+'</b>'+
                                            '<br>'+fsContact+'</br>'+fsAddress+'<br>'+'<a href="http://'+fsUrl+'">'+
                                            fsUrl+'</a>'+'</br>'+'</center>'+'</div>');
-     largeInfowindow.open(map, marker);
-     setInfowWindow = infoWindowContent;
-  };
+        largeInfowindow.open(map, marker);
+        setInfowWindow = infoWindowContent;
+      }).fail(function() {
+        alert("There was an error with the Foursquare API call. Please refresh the page and try again to load Foursquare data.");
+      });
+
+    }
 }
   
 	ko.applyBindings(new ViewModel());
