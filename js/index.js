@@ -111,7 +111,7 @@ function initialize() {
         alert("There was an error with the Foursquare API call. Please refresh the page and try again to load Foursquare data.");
       });
 
-    }
+    };
 }
   
 	ko.applyBindings(new ViewModel());
