@@ -73,12 +73,13 @@ function initialize() {
 
   for (var i = 0; i < locations.length; i++) {
     data = locations[i];
-		var loc = new google.maps.LatLng(locations[i].lat,locations[i].lng);
-     marker = new google.maps.Marker({
-      position : loc,
-      map: map,
-      id: locations[i].id,
-      name: locations[i].title
+	var loc = new google.maps.LatLng(locations[i].lat,locations[i].lng);
+     	marker = new google.maps.Marker({
+      	position : loc,
+      	map: map,	
+	animation: google.maps.Animation.DROP,
+      	id: locations[i].id,
+      	name: locations[i].title
   });
      markers.push(marker);
      google.maps.event.addListener(marker, 'click', infoWindowContent(marker,data,largeInfowindow));
@@ -102,7 +103,10 @@ function initialize() {
                                            '<br>'+fsContact+'</br>'+fsAddress+'<br>'+'<a href="http://'+fsUrl+'">'+
                                            fsUrl+'</a>'+'</br>'+'</center>'+'</div>');
         largeInfowindow.open(map, marker);
-        setInfowWindow = infoWindowContent;
+	marker.setAnimation(google.maps.Animation.BOUNCE);
+        setTimeout(function() {
+          marker.setAnimation(null);
+      }, 2100);        
       }).fail(function() {
         alert("There was an error with the Foursquare API call. Please refresh the page and try again to load Foursquare data.");
       });
