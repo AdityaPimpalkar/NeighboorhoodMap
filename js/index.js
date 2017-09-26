@@ -90,7 +90,7 @@ function initialize() {
 
   function infoWindowContent(marker,data,largeInfowindow) {
 	  
-      var venueFoursquareID = marker[i].id;
+      var venueFoursquareID = marker.id;
     foursquareURL = apiURL + venueFoursquareID + '?client_id=' +client_ID + '&client_secret=' + client_Secret + '&v=20160118';
 
     $.getJSON(foursquareURL).done(function(data) {
