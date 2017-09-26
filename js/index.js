@@ -89,10 +89,9 @@ function initialize() {
   }  
 
   function infoWindowContent(marker,data,largeInfowindow) {
-    for (var i = 0; i < locations.length; i++) {
-      var venueFoursquareID = locations[i].id;
+	  
+      var venueFoursquareID = marker[i].id;
     foursquareURL = apiURL + venueFoursquareID + '?client_id=' +client_ID + '&client_secret=' + client_Secret + '&v=20160118';
-    }
 
     $.getJSON(foursquareURL).done(function(data) {
       fsName = data.response.venue.name;
